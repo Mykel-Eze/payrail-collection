@@ -15,6 +15,8 @@ import TopNav from '../components/TopNav';
 
 import DashboardHome from '../dashboard-pages/home/Index';
 import GettingStarted from '../dashboard-pages/home/GettingStarted';
+import PendingTasks from '../dashboard-pages/home/PendingTasks';
+import KycSuccessful from '../dashboard-pages/home/KycSuccessful';
 
 function DashboardView() {
 
@@ -59,6 +61,12 @@ function DashboardView() {
                             </Route>
                             <Route path="/dashboard/getting-started">
                                 <GettingStarted />
+                            </Route>
+                            <Route path="/dashboard/pending-tasks">
+                                <PendingTasks />
+                            </Route>
+                            <Route path="/dashboard/kyc-successful">
+                                <KycSuccessful />
                             </Route>
                             {/*---==== end of Contents Sections  ====---*/}
                         </Switch>

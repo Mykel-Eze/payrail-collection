@@ -1,0 +1,48 @@
+#location-search-box {
+    max-width: 720px;
+    height: 470px;
+    border: 1px solid #777777;
+    box-sizing: border-box;
+    border-radius: 41px;
+    background: #777777 url(../images/map-bg.png);
+    background-position: center;
+    background-size: 100%;
+}
+.locations-wrapper {
+    width: 80%;
+    margin: auto;
+    background: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 21%);
+    border-radius: 28.5px;
+    transform: translateY(50%);
+}
+img.modal-close.close-location-box {
+    width: 48px;
+    cursor: pointer;
+    float: right;
+}
+.locations-wrapper #locations-inp {
+    background: #F9F9F9;
+    border: 1px solid #353D46;
+    box-sizing: border-box;
+    border-radius: 28.5px;
+    height: 57px;
+    box-shadow: none;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 18px;
+}
+.locations-wrapper .input-field {
+    margin-top: 0;
+}
+.locations-list {
+    padding: 20px 20px 50px;
+}
+.locations-list .red-location-icon {
+    margin-right: 10px;
+}
+#use-current-location {
+    cursor: pointer;
+}
