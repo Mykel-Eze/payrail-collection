@@ -79,7 +79,7 @@ const SideBar = () => {
                                 </div>
                             </li>
                             <li className="link-wrapper">
-                                <NavLink to="/wallet" className="pg-link">
+                                <NavLink to="/dashboard/wallet" className="pg-link">
                                     <div className="flex-div">
                                         <img src={require("../images/wallet-icon.svg").default} alt="icon" className="link-img" />
                                         <span className="link-txt">Wallet</span>

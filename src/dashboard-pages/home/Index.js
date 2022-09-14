@@ -31,7 +31,7 @@ const DashboardHome = () => {
                 <div className="section-row-wrapper grid-row-2">
                     <div className="wallet-card">
                         <div className="balance-wrapper">
-                            <div class="input-field" id="balance-select-wrapper">
+                            <div className="input-field" id="balance-select-wrapper">
                                 <select onChange={showDiv} id="balance-type">
                                     <option value="1">Collection Balance</option>
                                     <option value="2">Commission Balance</option>

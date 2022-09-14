@@ -17,6 +17,7 @@ import DashboardHome from '../dashboard-pages/home/Index';
 import GettingStarted from '../dashboard-pages/home/GettingStarted';
 import PendingTasks from '../dashboard-pages/home/PendingTasks';
 import KycSuccessful from '../dashboard-pages/home/KycSuccessful';
+import Wallet from '../dashboard-pages/Wallet';
 
 function DashboardView() {
 
@@ -67,6 +68,9 @@ function DashboardView() {
                             </Route>
                             <Route path="/dashboard/kyc-successful">
                                 <KycSuccessful />
+                            </Route>
+                            <Route path="/dashboard/wallet">
+                                <Wallet />
                             </Route>
                             {/*---==== end of Contents Sections  ====---*/}
                         </Switch>

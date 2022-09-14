@@ -1,0 +1,26 @@
+h4.section-title {
+    font-family: var(--font-bold);
+    font-size: 32px;
+    letter-spacing: -0.5px;
+}
+#wallet-page h4.section-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.copy-wrapper img.copy-icon {
+    top: -2px;
+    position: relative;
+    margin-right: 5px;
+}
+small.fig-small {
+    font-size: 16px;
+    line-height: 21px;
+    color: #6E7883;
+    font-weight: 400;
+}
+.bill-payment-wrapper-block .bpwb-block {
+    align-items: flex-start;
+}
+.srwb-item-cont {
+    margin-top: 40px;
+}

@@ -3,10 +3,10 @@ import { useEffect } from "react";
 // import $ from 'jquery'
 import M from 'materialize-css';
 
-import '../../css/modals.css';
+import '../css/modals.css';
+import '../css/wallet.css'
 
-
-const DashboardHome = () => {
+const Wallet = () => {
     useEffect(()=> {
         var elemSelect = document.querySelectorAll('select');
         M.FormSelect.init(elemSelect, {
@@ -14,29 +14,30 @@ const DashboardHome = () => {
         });
     }, []);
 
-    const balanceType = document.querySelector("#balance-type");
-    function showDiv(){
-        if(balanceType.value === 1){
-         document.getElementById('collection-block').style.display = "block";
-         document.getElementById('commision-block').style.display = "none";
-        } else{
-         document.getElementById('collection-block').style.display = "none";
-         document.getElementById('commision-block').style.display = "block";
-        }
-     } 
+    const CopyToClipboard = (selectedId) => {
+        /* Get the text field */
+        var copyText = document.getElementById(selectedId);
+    
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+        
+        /* Alert the copied text */
+        M.toast({html: 'Account number copied'})
+    }
     
     return ( 
-        <div className="page-content-wrapper">
+        <div id="wallet-page" className="page-content-wrapper">
             <div className="container">
                 <div className="section-row-wrapper grid-row-2">
                     <div className="wallet-card">
                         <div className="balance-wrapper">
-                            <div class="input-field" id="balance-select-wrapper">
-                                <select onChange={showDiv} id="balance-type">
-                                    <option value="1">Collection Balance</option>
-                                    <option value="2">Commission Balance</option>
-                                </select>
-                                <img src={require("../../images/caret-down-red.svg").default} alt="caret" className="inp-caret-icon" />
+                            <h4 className="section-title">Agent Wallet</h4>
+                            <div className="input-field" id="balance-select-wrapper">
+                                <span>Total Balance</span>
                             </div>
                             <div id="collection-block">
                                 <h4 className="wallet-balance bold-txt">
@@ -68,36 +69,37 @@ const DashboardHome = () => {
 
                     <div className="section-block payment-reminder-block">
                         <div className="section-block-header-2 flex-div">
-                            <span>PAYMENT REMINDER</span>
-                            <span>Amount</span>
+                            <span>Bank Details</span>
+                            <span className="flex-div copy-wrapper pointer" onClick={()=> CopyToClipboard("acct-number")}>
+                                <img src={require("../images/copy-icon.svg").default} alt="copy" className="copy-icon" />
+                                <span>Copy</span>
+                            </span>
                         </div>
 
                         <div className="payment-reminder-table">
                             <div className="payment-reminder-row flex-div">
-                                <div>CUS1092</div>
-                                <div>Iya Micheal Store</div>
-                                <div>₦100,000</div>
+                                <div>Bank name:</div>
+                                <div>Angala MFB</div>
                             </div>
                             <div className="payment-reminder-row flex-div">
-                                <div>CUS0092</div>
+                                <div>Account name:</div>
                                 <div>Bola Grocery Store</div>
-                                <div>₦99,980</div>
                             </div>
                             <div className="payment-reminder-row flex-div">
-                                <div>CUS3492</div>
-                                <div>Okon and Sons</div>
-                                <div>₦500,000</div>
+                                <div>Account number:</div>
+                                <div>1812788912</div>
+                                <input type="text" id="acct-number" defaultValue="1812788912" hidden />
                             </div>
                         </div>
 
                         <div className="payment-reminder-footer flex-div">
                             <div className="flex-div pr-modal-trigger">
-                                <img src={require("../../images/transaction-icon-2.svg").default} alt="icon" />
-                                <span>Transactions</span>
+                                <img src={require("../images/statement.svg").default} alt="icon" />
+                                <span>Statement</span>
                             </div>
                             <div className="flex-div pr-modal-trigger">
-                                <img src={require("../../images/customers-icon-2.svg").default} alt="icon" />
-                                <span>Customers</span>
+                                <img src={require("../images/settings-2.svg").default} alt="icon" />
+                                <span>Settings</span>
                             </div>
                         </div>
                     </div>
@@ -105,28 +107,40 @@ const DashboardHome = () => {
 
                 <div className="section-row-wrapper grid-row-2">
                     <div className="section-block-2 success-rate-wrapper-block">
-                        <div className="section-block-header flex-div">
-                            <span>Total customers</span>
-                            <span>Owing customers</span>
-                            <span>Total debt</span>
+                        <div className="flex-div justify-content-btw">
+                            <div className="srwb-item">
+                                <div className="section-block-header">COMPLETED</div>
+                                <div className="srwb-item-cont">
+                                    <h4 className="fig-title">720</h4>
+                                </div>
+                            </div>
+                            <div className="srwb-item">
+                                <div className="section-block-header">PENDING PAYOUT</div>
+                                <div className="srwb-item-cont">
+                                    <h4 className="fig-title"><small className="currency">₦</small>20,000.00</h4>
+                                </div>
+                            </div>
+                            <div className="srwb-item right-align">
+                                <div className="section-block-header">PAID OUT</div>
+                                <div className="srwb-item-cont">
+                                    <h4 className="fig-title pry-color"><small className="currency">₦</small>2,000,000.00</h4>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="flex-div justify-content-btw">
-                            <h4 className="fig-title">720</h4>
-                            <h4 className="fig-title">300</h4>
-                            <h4 className="fig-title pry-color">₦20,000,000.00</h4>
+                        <div className="flex-div justify-content-btw">                            
                         </div>
                     </div>
 
                     <div className="section-block-2 bill-payment-wrapper-block">
                         <div className="section-block-header-2 flex-div">
-                            <span>Pending payments</span>
-                            <span>PAYOUTS</span>
+                            <span>PAYMENT REMINDER</span>
+                            <span>TOTAL AMOUNT</span>
                         </div>
 
-                        <div className="flex-div justify-content-btw">
-                            <h4 className="fig-title">10</h4>
-                            <h4 className="fig-title pry-color">₦300,000.00</h4>
+                        <div className="flex-div justify-content-btw bpwb-block">
+                            <h4 className="fig-title">20 <br /> <small className="fig-small">Customers</small></h4>
+                            <h4 className="fig-title"><small className="currency">₦</small>699,980.00</h4>
                         </div>
                     </div>
                 </div>
@@ -146,7 +160,7 @@ const DashboardHome = () => {
                                     <tr>
                                         <td>
                                             <div className="flex-div">
-                                                <img src={require("../../images/received-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
+                                                <img src={require("../images/received-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
                                                 <div className="tranx-activity-details">
                                                     <div className="tranx-activity">Payout from Payrail</div>
                                                     <small className="tranx-activity-status">Processed</small>
@@ -157,22 +171,25 @@ const DashboardHome = () => {
                                             <span>08148620099</span>
                                         </td>
                                         <td>
-                                            <span>Bill Payment </span>
+                                            <span>Payout</span>
+                                        </td>
+                                        <td>
+                                            <span>Commission </span>
                                         </td>
                                         <td>
                                             <div className="flex-div">
                                                 <div className="tranx-activity-details">
-                                                    <div className="tranx-activity tranx-amount failed-transaction">- ₦10,000</div>
+                                                    <div className="tranx-activity tranx-amount">- ₦10,000</div>
                                                     <small className="tranx-activity-status">01 Sept, 04:25 AM</small>
                                                 </div>
-                                                <img src={require("../../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
+                                                <img src={require("../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div className="flex-div">
-                                                <img src={require("../../images/received-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
+                                                <img src={require("../images/received-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
                                                 <div className="tranx-activity-details">
                                                     <div className="tranx-activity">Olamide sent you Money</div>
                                                     <small className="tranx-activity-status">Received</small>
@@ -183,22 +200,25 @@ const DashboardHome = () => {
                                             <span>1078234098</span>
                                         </td>
                                         <td>
-                                            <span>Income </span>
+                                            <span>Deposit </span>
+                                        </td>
+                                        <td>
+                                            <span>Wallet Funding </span>
                                         </td>
                                         <td>
                                             <div className="flex-div">
                                                 <div className="tranx-activity-details">
-                                                    <div className="tranx-activity tranx-amount success-transaction">+ ₦10,000</div>
+                                                    <div className="tranx-activity tranx-amount">+ ₦10,000</div>
                                                     <small className="tranx-activity-status">28 Aug, 01:50 PM</small>
                                                 </div>
-                                                <img src={require("../../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
+                                                <img src={require("../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div className="flex-div">
-                                                <img src={require("../../images/send-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
+                                                <img src={require("../images/send-icon.svg").default} alt="transaction icon" className="tranx-activity-icon" />
                                                 <div className="tranx-activity-details">
                                                     <div className="tranx-activity">Sent Money to Unilever</div>
                                                     <small className="tranx-activity-status">Processed</small>
@@ -209,15 +229,18 @@ const DashboardHome = () => {
                                             <span>18902789012</span>
                                         </td>
                                         <td>
-                                            <span>Transfer</span>
+                                            <span>Collection</span>
+                                        </td>
+                                        <td>
+                                            <span>CUS1209</span>
                                         </td>
                                         <td>
                                             <div className="flex-div">
                                                 <div className="tranx-activity-details">
-                                                    <div className="tranx-activity tranx-amount pending-transaction">- ₦10,000</div>
+                                                    <div className="tranx-activity tranx-amount">- ₦10,000</div>
                                                     <small className="tranx-activity-status">20 Aug, 02:30 PM</small>
                                                 </div>
-                                                <img src={require("../../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
+                                                <img src={require("../images/menu-circle.svg").default} alt="icon" className="table-menu-circle" />
                                             </div>
                                         </td>
                                     </tr>
@@ -231,4 +254,4 @@ const DashboardHome = () => {
     );
 }
  
-export default DashboardHome;
+export default Wallet;
