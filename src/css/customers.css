@@ -116,7 +116,7 @@ button.add-trigger-btn:hover {
     font-size: 16px;
     padding: 20px 10px;
 }
-td.gray-txt {
+.gray-txt {
     color: #6E7883;
 }
 
@@ -333,7 +333,7 @@ small.tab-label-tag {
     background: #FCF9FA;
     border: 1px solid rgba(137, 22, 59, 0.1);
     border-radius: 4px;
-    width: 18px;
+    min-width: 18px;
     height: 18px;
     line-height: 18px;
     font-size: 14px;
@@ -343,5 +343,29 @@ small.tab-label-tag {
 }
 .tabs-block-wrapper .tabs .tab a.active small.tab-label-tag {
     display: inline-block;
+}
+.call-info-trigger {
+    cursor: pointer;
+}
+.call-info-trigger.empty-call-info {
+    cursor: default;
+}
+.modal-trigger {
+    cursor: pointer;
+}
+.empty-txts-wrapper {
+    max-width: 350px;
+    margin: 0 auto 40px;
+    font-size: 14px;
+}
+.empty-txt-title {
+    margin-bottom: 8px;
+}
+.empty-cta-wrapper {
+    margin-top: 10px;
+}
+span.empty-cta {
+    font-weight: bold;
+    text-decoration: underline;
 }
 /*---=== end of Customers ===---*/

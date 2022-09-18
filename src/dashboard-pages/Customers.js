@@ -42,7 +42,7 @@ const Customers = () => {
                         <li class="tab">
                             <a href="#completed-payments">
                                 <span>Completed Payments</span>
-                                <small className="tab-label-tag">2</small>
+                                <small className="tab-label-tag">0</small>
                             </a>
                         </li>
                     </ul>
@@ -168,7 +168,7 @@ const Customers = () => {
                                         </td>
                                         <td>0814862009</td>
                                         <td>Iya Micheal Store</td>
-                                        <td className="gray-txt truncate">10 Bags of Rice</td>
+                                        <td className="gray-txt">10 Bags of Rice</td>
                                         <td>Oshodi, Lagos</td>
                                         <td className="green-text">₦900,000</td>
                                         <td className="orange-text">₦100,000</td>
@@ -182,7 +182,7 @@ const Customers = () => {
                                         </td>
                                         <td>09014873110</td>
                                         <td>Bola Grocery Store</td>
-                                        <td className="gray-txt truncate">8 Cartons of Sunlight...</td>
+                                        <td className="gray-txt">8 Cartons of Sunlight...</td>
                                         <td>Oshodi, Lagos</td>
                                         <td className="default-text">₦0</td>
                                         <td className="orange-text">₦99,980</td>
@@ -196,7 +196,7 @@ const Customers = () => {
                                         </td>
                                         <td>08025982221</td>
                                         <td>Okon and Sons</td>
-                                        <td className="gray-txt truncate">4 Cartons of Croack...</td>
+                                        <td className="gray-txt">4 Cartons of Croack...</td>
                                         <td>Ikeja, Lagos</td>
                                         <td className="green-text">₦250,000</td>
                                         <td className="orange-text">₦500,000</td>
@@ -210,7 +210,7 @@ const Customers = () => {
                                         </td>
                                         <td>08136093532</td>
                                         <td>Iya Barakatu</td>
-                                        <td className="gray-txt truncate">8 Bags of Beans</td>
+                                        <td className="gray-txt">8 Bags of Beans</td>
                                         <td>Ajayi Farms, Lagos </td>
                                         <td className="default-text">₦0</td>
                                         <td className="orange-text">₦1,000,000</td>
@@ -338,34 +338,47 @@ const Customers = () => {
                                 <tbody>                           
                                     <tr>
                                         <td>
-                                            <span className="status-disc green"></span>
+                                            <span className="status-disc"></span>
                                         </td>
-                                        <td>0814862009</td>
-                                        <td>Iya Micheal Store</td>
-                                        <td className="gray-txt truncate">10 Bags of Rice</td>
-                                        <td>Oshodi, Lagos</td>
-                                        <td className="green-text">₦900,000</td>
-                                        <td className="orange-text">₦100,000</td>
                                         <td>
-                                            <img src={require('../images/call.svg').default} alt="call" className="call-info-trigger modal-trigger" />
+                                            <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
                                         </td>
-                                    </tr>
-                                    <tr>
                                         <td>
-                                            <span className="status-disc green"></span>
+                                            <img src={require('../images/c-empty-2.svg').default} alt="empty" className="empty-placeholder" />
                                         </td>
-                                        <td>09014873110</td>
-                                        <td>Bola Grocery Store</td>
-                                        <td className="gray-txt truncate">8 Cartons of Sunlight...</td>
-                                        <td>Oshodi, Lagos</td>
-                                        <td className="default-text">₦0</td>
-                                        <td className="orange-text">₦99,980</td>
+                                        <td className="gray-txt">
+                                            <img src={require('../images/c-empty-3.svg').default} alt="empty" className="empty-placeholder" />
+                                        </td>
                                         <td>
-                                            <img src={require('../images/call.svg').default} alt="call" className="call-info-trigger modal-trigger" />
+                                            <img src={require('../images/c-empty-4.svg').default} alt="empty" className="empty-placeholder" />
+                                        </td>
+                                        <td className="green-text">
+                                            <img src={require('../images/c-empty-5.svg').default} alt="empty" className="empty-placeholder" />
+                                        </td>
+                                        <td className="orange-text">
+                                            <img src={require('../images/c-empty-6.svg').default} alt="empty" className="empty-placeholder" />
+                                        </td>
+                                        <td>
+                                            <img src={require('../images/empty-call.svg').default} alt="call" className="call-info-trigger empty-call-info" />
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div className="empty-cont-container center">
+                                <div className="empty-img-wrapper">
+                                    <img src={require('../images/empty-people.svg').default} alt="empty-img" className="empty-img" />
+                                </div>
+                                <div className="empty-txts-wrapper">
+                                    <div className="empty-txt-title">No customer assigned to you</div>
+                                    <div className="empty-txt-desc gray-txt">
+                                        Customers are added when  a  payrail admin assigns them to you. You can also add customers yourself.
+                                    </div>
+                                    <div className="empty-cta-wrapper">
+                                        <span className="empty-cta modal-trigger">+ Add Customers</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
