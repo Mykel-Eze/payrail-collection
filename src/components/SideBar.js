@@ -87,7 +87,7 @@ const SideBar = () => {
                                 </NavLink>
                             </li>
                             <li className="link-wrapper">
-                                <NavLink to="/customers" className="pg-link">
+                                <NavLink to="/dashboard/customers" className="pg-link">
                                     <div className="flex-div">
                                         <img src={require("../images/customers-icon.svg").default} alt="icon" className="link-img" />
                                         <span className="link-txt">Customers</span>
@@ -95,7 +95,7 @@ const SideBar = () => {
                                 </NavLink>
                             </li>
                             <li className="link-wrapper">
-                                <NavLink to="/transactions" className="pg-link">
+                                <NavLink to="/dashboard/transactions" className="pg-link">
                                     <div className="flex-div">
                                         <img src={require("../images/tranx-icon.svg").default} alt="icon" className="link-img" />
                                         <span className="link-txt">Transactions</span>
@@ -103,7 +103,7 @@ const SideBar = () => {
                                 </NavLink>
                             </li>
                             <li className="link-wrapper">
-                                <NavLink to="/payout" className="pg-link">
+                                <NavLink to="/dashboard/payout" className="pg-link">
                                     <div className="flex-div">
                                         <img src={require("../images/payout-icon.svg").default} alt="icon" className="link-img" />
                                         <span className="link-txt">Payout</span>
