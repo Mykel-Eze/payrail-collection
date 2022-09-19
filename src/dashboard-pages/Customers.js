@@ -16,7 +16,7 @@ const Customers = () => {
         var elemsTabs = document.querySelectorAll('.tabs');
         M.Tabs.init(elemsTabs);
 
-        $(".filter-dropdown-trigger").click(function(){
+        $(".filter-trigger").click(function(){
             $(".filter-dropdown-content").slideToggle();
         });
     }, []);
@@ -27,7 +27,7 @@ const Customers = () => {
                 <div className="page-title-wrapper">
                     <h4 className="page-content-title flex-div">
                         <span>Customers </span>
-                        <small className="page-label-tag">3</small>
+                        <small className="page-label-tag">· 4</small>
                     </h4>
                 </div>
 
@@ -53,7 +53,7 @@ const Customers = () => {
                         <div className="page-bar-wrapper flex-div justify-content-btw">
                             <div className="page-bar-left flex-div">
                                 <div className="filter-block flex-div">
-                                    <div className="filter-dropdown-trigger">
+                                    <div className="filter-dropdown-trigger filter-trigger">
                                         <img src={require('../images/filter.svg').default} alt="filter-icon" className="filter-icon" />
                                         <span>Filters</span>
                                     </div>
@@ -119,8 +119,8 @@ const Customers = () => {
                                         </div>
 
                                         <div className="filter-btns-wrapper">
-                                            <button className="filter-btn pry-btn">Filter</button>
-                                            <button className="filter-reset-btn">
+                                            <button className="filter-btn pry-btn filter-trigger">Filter</button>
+                                            <button className="filter-reset-btn filter-trigger">
                                                 <span>Reset to default</span>
                                             </button>
                                         </div>
@@ -227,7 +227,7 @@ const Customers = () => {
                         <div className="page-bar-wrapper flex-div justify-content-btw">
                             <div className="page-bar-left flex-div">
                                 <div className="filter-block flex-div">
-                                    <div className="filter-dropdown-trigger">
+                                    <div className="filter-dropdown-trigger filter-trigger">
                                         <img src={require('../images/filter.svg').default} alt="filter-icon" className="filter-icon" />
                                         <span>Filters</span>
                                     </div>
@@ -293,8 +293,8 @@ const Customers = () => {
                                         </div>
 
                                         <div className="filter-btns-wrapper">
-                                            <button className="filter-btn pry-btn">Filter</button>
-                                            <button className="filter-reset-btn">
+                                            <button className="filter-btn pry-btn filter-trigger">Filter</button>
+                                            <button className="filter-reset-btn filter-trigger">
                                                 <span>Reset to default</span>
                                             </button>
                                         </div>

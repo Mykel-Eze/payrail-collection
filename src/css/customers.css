@@ -7,12 +7,7 @@ h4.page-content-title {
 }
 small.page-label-tag, small.tab-label-tag {
     font-weight: normal;
-    font-size: 16px;
-    line-height: 23px;
-    background: rgba(238, 107, 37, 0.5);
-    border-radius: 3px;
-    width: 22px;
-    height: 22px;
+    font-size: 20px;
     color: #353D46;
     text-align: center;
     margin-left: 10px;
@@ -367,5 +362,9 @@ small.tab-label-tag {
 span.empty-cta {
     font-weight: bold;
     text-decoration: underline;
+}
+
+span.tranxn-amount {
+    padding-right: 5px;
 }
 /*---=== end of Customers ===---*/

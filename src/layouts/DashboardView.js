@@ -19,6 +19,8 @@ import PendingTasks from '../dashboard-pages/home/PendingTasks';
 import KycSuccessful from '../dashboard-pages/home/KycSuccessful';
 import Wallet from '../dashboard-pages/Wallet';
 import Customers from '../dashboard-pages/Customers';
+import Transactions from '../dashboard-pages/Transactions';
+import TransactionsEmpty from '../dashboard-pages/TransactionsEmpty';
 
 function DashboardView() {
 
@@ -75,6 +77,12 @@ function DashboardView() {
                             </Route>
                             <Route path="/dashboard/customers">
                                 <Customers />
+                            </Route>
+                            <Route path="/dashboard/transactions">
+                                <Transactions />
+                            </Route>
+                            <Route path="/dashboard/transactions-empty">
+                                <TransactionsEmpty />
                             </Route>
                             {/*---==== end of Contents Sections  ====---*/}
                         </Switch>

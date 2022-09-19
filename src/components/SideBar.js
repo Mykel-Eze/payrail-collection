@@ -103,10 +103,10 @@ const SideBar = () => {
                                 </NavLink>
                             </li>
                             <li className="link-wrapper">
-                                <NavLink to="/dashboard/payout" className="pg-link">
+                                <NavLink to="/dashboard/payouts" className="pg-link">
                                     <div className="flex-div">
                                         <img src={require("../images/payout-icon.svg").default} alt="icon" className="link-img" />
-                                        <span className="link-txt">Payout</span>
+                                        <span className="link-txt">Payouts</span>
                                     </div>
                                 </NavLink>
                             </li>
