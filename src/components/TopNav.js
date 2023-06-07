@@ -3,6 +3,8 @@ import "../css/top-nav.css";
 import { NavLink } from "react-router-dom";
 import M from "materialize-css";
 import { useEffect } from "react";
+import MakeCollections from "./modals/MakeCollections";
+import CustomerDetails from "./modals/CustomerDetails";
 // import $ from "jquery";
 
 const TopNav = () => {
@@ -13,6 +15,8 @@ const TopNav = () => {
             hover: true,
             constrainWidth: false
         });
+        var elemsModal = document.querySelectorAll('.modal');
+        M.Modal.init(elemsModal);
     }, []);
 
     return(
@@ -33,12 +37,18 @@ const TopNav = () => {
                         <img src={require("../images/notification.svg").default} alt="icon" className="topnav-btn-img" />
                     </NavLink>
                     <div className="create-account-wrapper">
-                        <NavLink to="/signup" className="create-account-btn pry-bg">
+                        {/* <a href="#make-collections-modal" className="create-account-btn pry-bg modal-trigger">
                             <span>MAKE COLLECTION</span>
-                        </NavLink>
+                        </a> */}
+                        <a href="#make-collections-modal" className="create-account-btn pry-bg modal-trigger">
+                            <span>MAKE COLLECTION</span>
+                        </a>
                     </div>
                 </div>
             </div>
+
+            <MakeCollections />
+            <CustomerDetails />
         </nav>
     );
 }

@@ -1,0 +1,50 @@
+/*---=== Merchant-Home ===---*/
+.merchant-balance-wrapper {
+    margin-top: 10%;
+}
+.flex-div.inventory-item-wrapper {
+    overflow: auto;
+    padding-bottom: 10px;
+}
+.flex-div.inventory-item-wrapper::-webkit-scrollbar {
+	height: 3px;
+}
+.flex-div.inventory-item-wrapper::-webkit-scrollbar-thumb {
+	background: rgba(137, 22, 59, 0.8);
+}
+.flex-div.inventory-item-wrapper::-webkit-scrollbar-thumb:hover {
+	background: rgba(137, 22, 59, 0.4);
+}
+.grid-row-2b {
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+}
+.inventory-item {
+    margin-right: 30px;
+    text-align: center;
+}
+span.disc.pry-bg {
+    background-color: var(--pry-color);
+}
+span.disc.sec-bg {
+    background-color: var(--sec-color);
+}
+.expense-block-header {
+    font-size: 10px;
+}
+span.eid-txt {
+    padding: 0 5px 0 3px;
+}
+.grid-row-wallet {
+    grid-template-columns: calc(45% - 20px) calc(55%);
+}
+span.daterange-filter-dates {
+    padding-right: 5px;
+}
+
+
+@media (min-width: 601px) {
+    .expense-overivew-block {
+        min-width: 530px;
+    }
+}
+/*---=== end of Merchant-Home ===---*/

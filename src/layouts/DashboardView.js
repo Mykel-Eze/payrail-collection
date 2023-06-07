@@ -21,6 +21,10 @@ import Wallet from '../dashboard-pages/Wallet';
 import Customers from '../dashboard-pages/Customers';
 import Transactions from '../dashboard-pages/Transactions';
 import TransactionsEmpty from '../dashboard-pages/TransactionsEmpty';
+import Payouts from '../dashboard-pages/Payouts';
+import PayoutsEmpty from '../dashboard-pages/PayoutsEmpty';
+import PayoutDetails from '../dashboard-pages/PayoutDetails';
+import MerchantHome from '../dashboard-pages/home/Merchant';
 
 function DashboardView() {
 
@@ -60,8 +64,11 @@ function DashboardView() {
                             <Route exact path="/dashboard">
                                 <Redirect to="/dashboard/home" />
                             </Route>
-                            <Route path="/dashboard/home">
+                            {/* <Route path="/dashboard/home">
                                 <DashboardHome />
+                            </Route> */}
+                            <Route path="/dashboard/home">
+                                <MerchantHome />
                             </Route>
                             <Route path="/dashboard/getting-started">
                                 <GettingStarted />
@@ -83,6 +90,18 @@ function DashboardView() {
                             </Route>
                             <Route path="/dashboard/transactions-empty">
                                 <TransactionsEmpty />
+                            </Route>
+                            <Route path="/dashboard/payouts">
+                                <Payouts />
+                            </Route>
+                            <Route path="/dashboard/payouts-empty">
+                                <PayoutsEmpty />
+                            </Route>
+                            <Route path="/dashboard/payout-details">
+                                <PayoutDetails />
+                            </Route>
+                            <Route path="/dashboard/merchant">
+                                <MerchantHome />
                             </Route>
                             {/*---==== end of Contents Sections  ====---*/}
                         </Switch>

@@ -19,7 +19,7 @@ const Transactions = () => {
     }, []);
 
     return(
-        <div id="customers-page" className="page-content-wrapper">
+        <div id="transactions-page" className="page-content-wrapper">
             <div className="container">
                 <div className="page-title-wrapper">
                     <h4 className="page-content-title flex-div">

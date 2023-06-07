@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 import '../css/customers.css'
 
-const Payouts = () => {
+const PayoutsEmpty = () => {
     useEffect (()=> {
         var elemsModal = document.querySelectorAll('.modal');
         M.Modal.init(elemsModal);
@@ -21,9 +21,9 @@ const Payouts = () => {
             $(".filter-dropdown-content").slideToggle();
         });
 
-        $(".clickable-row").click(function() {
-            window.location = $(this).data("href");
-        });    
+        // $(".clickable-row").click(function() {
+        //     window.location = $(this).data("href");
+        // });    
     }, []);
 
     return(
@@ -32,7 +32,7 @@ const Payouts = () => {
                 <div className="page-title-wrapper">
                     <h4 className="page-content-title flex-div">
                         <span>Payouts </span>
-                        <small className="page-label-tag">· 4</small>
+                        {/* <small className="page-label-tag">· 0</small> */}
                     </h4>
                 </div>
 
@@ -103,40 +103,42 @@ const Payouts = () => {
                             </tr>
                         </thead>
                         <tbody>   
-                            <tr className="clickable-row" data-href="/dashboard/payout-details">
-                                <td>01 Oct, 2021</td>
-                                <td className="gray-txt">Payrail</td>
-                                <td>NGN 10,000.10</td>
-                                <td>NGN 1500.00</td>
-                                <td>Successful</td>
-                            </tr>      
-                            <tr className="clickable-row" data-href="/dashboard/payout-details">
-                                <td>30 Mar, 2021 </td>
-                                <td className="gray-txt">Payrail</td>
-                                <td>NGN 2,000.52</td>
-                                <td>NGN 20.52</td>
-                                <td>Successful</td>
-                            </tr>
-                            <tr className="clickable-row" data-href="/dashboard/payout-details">
-                                <td>06 Apirl, 2021</td>
-                                <td className="gray-txt">Payrail</td>
-                                <td>NGN 4,000.15</td>
-                                <td>NGN 40.15</td>
-                                <td>Successful</td>
-                            </tr>
-                            <tr className="clickable-row" data-href="/dashboard/payout-details">
-                                <td>30 Mar, 2021 </td>
-                                <td className="gray-txt">Payrail</td>
-                                <td>NGN 1,300.49</td>
-                                <td>NGN 130.49</td>
-                                <td>Successful</td>
+                            <tr className="clickable-row">
+                                <td>
+                                    <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
+                                </td>
+                                <td className="gray-txt">
+                                    <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
+                                </td>
+                                <td>
+                                    <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
+                                </td>
+                                <td>
+                                    <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
+                                </td>
+                                <td>
+                                    <img src={require('../images/c-empty-1.svg').default} alt="empty" className="empty-placeholder" />
+                                </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div className="empty-cont-container center">
+                        <div className="empty-img-wrapper">
+                            <img src={require('../images/empty-payouts.svg').default} alt="empty-img" className="empty-img" />
+                        </div>
+                        <div className="empty-txts-wrapper">
+                            <div className="empty-txt-title">You don’t have any payout</div>
+                            <div className="empty-txt-desc gray-txt">
+                                We haven't paid any money to this account. This is where you'll be able to see your payouts
+                                and the transactions you were paid for.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Payouts;
+export default PayoutsEmpty;
